@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<typesystem package="KEditor">
+
+    <load-typesystem name="typesystem_widgets.xml" generate="no"/>
+
+    <!-- The classes are declared in a namespace -->
+    <namespace-type name="KEditorExample" visible="no">
+        <object-type name="KEditorView" />
+    </namespace-type>
+
+</typesystem>
