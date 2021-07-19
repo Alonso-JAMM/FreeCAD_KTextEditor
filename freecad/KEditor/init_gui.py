@@ -3,7 +3,7 @@ import FreeCADGui as gui
 from KEditorView import KEditorView
 
 
-class template_workbench(gui.Workbench):
+class keditor_workbench(gui.Workbench):
     """
     class which gets initiated at starup of the gui
     """
@@ -35,4 +35,4 @@ class template_workbench(gui.Workbench):
         pass
 
 
-gui.addWorkbench(template_workbench())
+gui.addWorkbench(keditor_workbench())
