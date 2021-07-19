@@ -1,7 +1,7 @@
 
 # The name of the generated bindings module (as imported in Python). You can change the name
 # to something relevant for your project.
-set(bindings_library "KEditor")
+set(bindings_library "KEditorView")
 
 # The header file with all the types and functions for which bindings will be generated.
 # Usually it simply includes other headers of the library you are creating bindings for.
@@ -15,8 +15,8 @@ set(typesystem_file ${CMAKE_CURRENT_SOURCE_DIR}/bindings.xml)
 # and a '.cpp' file per C++ type. These are needed for generating the module shared
 # library.
 set(generated_sources
-    ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/keditor_module_wrapper.cpp
-    ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/keditorexample_keditorview_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/keditorview_module_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/${bindings_library}/keditor_keditorview_wrapper.cpp
 )
 
 get_target_property(shiboken2_generator Shiboken2::shiboken2 LOCATION)
@@ -91,7 +91,7 @@ target_include_directories(${bindings_library} PUBLIC "${CMAKE_SOURCE_DIR}")
 
 #target_link_libraries(${bindings_library} PRIVATE KEDITORLIB)
 target_link_libraries(${bindings_library} PRIVATE Shiboken2::libshiboken)
-target_link_libraries(${bindings_library} PUBLIC keditor)
+target_link_libraries(${bindings_library} PUBLIC libkeditor)
 target_link_libraries(${bindings_library} PRIVATE PySide2::pyside2)
 target_link_libraries(${bindings_library} PRIVATE Qt5::Core)
 target_link_libraries(${bindings_library} PRIVATE Qt5::Widgets)

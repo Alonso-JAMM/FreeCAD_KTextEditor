@@ -5,6 +5,6 @@
 #define QT_ANNOTATE_ACCESS_SPECIFIER(a) __attribute__((annotate(#a)))
 
 
-#include <src/KEditor.h>
+#include <src/KEditorView.h>
 
 #endif

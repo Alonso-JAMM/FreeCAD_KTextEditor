@@ -1,6 +1,6 @@
  
 set(KEDITOR_SRCS
-    KEditor.cpp
+    KEditorView.cpp
 )
 
 include_directories(
@@ -10,8 +10,8 @@ include_directories(
 
 
 
-add_library(keditor SHARED ${KEDITOR_SRCS})
+add_library(libkeditor SHARED ${KEDITOR_SRCS})
 
-target_link_libraries(keditor KF5::TextEditor)
+target_link_libraries(libkeditor KF5::TextEditor)
 
-set_property(TARGET keditor PROPERTY PREFIX "")
+set_property(TARGET libkeditor PROPERTY PREFIX "")

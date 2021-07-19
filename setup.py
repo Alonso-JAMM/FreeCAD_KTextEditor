@@ -48,16 +48,20 @@ class build_ext(_build_ext):
 
 
 setup(
-    name="Editor",
+    name="KEditor",
     version="0.1.0",
-    packages=["Editor"],
+    packages=[
+        "KEditorView",
+        "freecad",
+        "freecad.KEditor",
+    ],
     package_dir={
-        "Editor": "src",
+        "KEditorView": "src",
     },
-    description="Test python library using python bindings with shiboken",
+    description="Embedded KTextEditor for FreeCAD",
     include_package_data=True,
     zip_safe=False,
-    ext_modules=[CMakeExtension("Editor")],
+    ext_modules=[CMakeExtension("KEditorView")],
     cmdclass={
         "build_ext": build_ext,
     }

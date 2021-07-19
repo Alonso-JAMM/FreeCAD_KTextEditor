@@ -1,6 +1,6 @@
 #ifndef EDITOR_EXPORT_H
 #define EDITOR_EXPORT_H
 
-#define EDITOR_EXPORT
+#define KEDITORVIEW_EXPORT
 
 #endif
