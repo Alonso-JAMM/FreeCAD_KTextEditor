@@ -1,16 +1,18 @@
 import os
-import FreeCADGui as gui
-from KEditorView import KEditorView
+import FreeCADGui as Gui
 
 
-class keditor_workbench(gui.Workbench):
+class keditor_workbench(Gui.Workbench):
     """
     class which gets initiated at starup of the gui
     """
 
     MenuText = "KEditor"
     ToolTip = "Embedded KTextEditor in FreeCAD"
-    toolbox = []
+    Icon = os.path.join(os.path.dirname(__file__), "resources", "Accessories-text-editor.svg")
+    toolbox = [
+        "OpenFile",
+    ]
 
     def GetClassName(self):
         return "Gui::PythonWorkbench"
@@ -20,7 +22,12 @@ class keditor_workbench(gui.Workbench):
         This function is called at the first activation of the workbench.
         here is the place to import all the commands
         """
-        pass
+        from .commands import OpenFile
+
+        self.appendToolbar("KEditor", self.toolbox)
+        self.appendMenu("KEditor", self.toolbox)
+
+        Gui.addCommand("OpenFile", OpenFile())
 
     def Activated(self):
         '''
@@ -35,4 +42,4 @@ class keditor_workbench(gui.Workbench):
         pass
 
 
-gui.addWorkbench(keditor_workbench())
+Gui.addWorkbench(keditor_workbench())

@@ -31,6 +31,11 @@ KEditorView::~KEditorView() {
     delete d;
 }
 
+void KEditorView::openUrl(const QUrl &url)
+{
+    d->doc->openUrl(url);
+}
+
 bool KEditorView::event(QEvent* e)
 {
     // HACK: when keys are pressed QEvent::ShortcutOverride is emitted. If we

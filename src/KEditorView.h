@@ -5,6 +5,7 @@
 #include "editor_export.h"
 #include <QEvent>
 #include <QObject>
+#include <QUrl>
 
 namespace KEditor {
 class KEditorViewP;
@@ -15,6 +16,8 @@ class KEDITORVIEW_EXPORT KEditorView: public QWidget
 public:
     KEditorView();
     ~KEditorView();
+
+    void openUrl(const QUrl &url);
 
 protected:
     // For keyboard presses event handling
