@@ -31,3 +31,22 @@ class OpenFile:
                 'MenuText': "Open File",
                 'ToolTip': "Open a File "
                 }
+
+
+class ConfigDialog:
+    def __init__(self):
+        pass
+
+    def IsActive(self):
+        return True
+
+    def Activated(self):
+        mw = getMainWindow()
+        editorView = KEditorView()
+        editorView.confidDialog(mw)
+
+    def GetResources(self):
+        return {'Pixmap': os.path.join(getIconDir(), "Preferences-general.svg"),
+                'MenuText': "Configure",
+                'ToolTip': "Configure KTextEditor"
+                }

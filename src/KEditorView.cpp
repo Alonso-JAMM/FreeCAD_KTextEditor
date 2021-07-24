@@ -36,6 +36,12 @@ void KEditorView::openUrl(const QUrl &url)
     d->doc->openUrl(url);
 }
 
+void KEditorView::confidDialog(QWidget* parent)
+{
+    KTextEditor::Editor* editor = KTextEditor::Editor::instance();
+    editor->configDialog(parent);
+}
+
 bool KEditorView::event(QEvent* e)
 {
     // HACK: when keys are pressed QEvent::ShortcutOverride is emitted. If we

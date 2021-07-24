@@ -12,6 +12,7 @@ class keditor_workbench(Gui.Workbench):
     Icon = os.path.join(os.path.dirname(__file__), "resources", "Accessories-text-editor.svg")
     toolbox = [
         "OpenFile",
+        "ConfigDialog",
     ]
 
     def GetClassName(self):
@@ -23,11 +24,13 @@ class keditor_workbench(Gui.Workbench):
         here is the place to import all the commands
         """
         from .commands import OpenFile
+        from .commands import ConfigDialog
 
         self.appendToolbar("KEditor", self.toolbox)
         self.appendMenu("KEditor", self.toolbox)
 
         Gui.addCommand("OpenFile", OpenFile())
+        Gui.addCommand("ConfigDialog", ConfigDialog())
 
     def Activated(self):
         '''

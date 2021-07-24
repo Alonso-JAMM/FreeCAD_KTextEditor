@@ -19,6 +19,8 @@ public:
 
     void openUrl(const QUrl &url);
 
+    void confidDialog(QWidget* parent);
+
 protected:
     // For keyboard presses event handling
     bool event(QEvent* e);
