@@ -49,7 +49,7 @@ class build_ext(_build_ext):
 
 setup(
     name="KEditor",
-    version="0.4.0",
+    version="0.4.1",
     packages=[
         "KEditorView",
         "freecad",
