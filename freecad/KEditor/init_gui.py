@@ -13,6 +13,7 @@ class keditor_workbench(Gui.Workbench):
     toolbox = [
         "OpenFile",
         "ConfigDialog",
+        "OpenMacro",
     ]
 
     def GetClassName(self):
@@ -25,12 +26,14 @@ class keditor_workbench(Gui.Workbench):
         """
         from .commands import OpenFile
         from .commands import ConfigDialog
+        from .commands import OpenMacro
 
         self.appendToolbar("KEditor", self.toolbox)
         self.appendMenu("KEditor", self.toolbox)
 
         Gui.addCommand("OpenFile", OpenFile())
         Gui.addCommand("ConfigDialog", ConfigDialog())
+        Gui.addCommand("OpenMacro", OpenMacro())
 
     def Activated(self):
         '''
